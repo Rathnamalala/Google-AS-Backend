@@ -56,7 +56,7 @@ def predict_app_success(data: AppFeatures):
     prob = model.predict_proba(df_input)[0][1] * 100  # Probability of being "Popular"
 
     # Determine the result
-    result = "Popular" if prediction == 1 else "Unpopular"
+    result = "Popular (100k+ Installs)" if prediction == 1 else "Unpopular (<100k Installs)"
     
     # Return the prediction result and confidence level
     return {"result": result, "confidence": f"{prob:.2f}%"}
